@@ -9,52 +9,87 @@
 </head>
 
 <body>
-    <!-- 1. should have a page title in an h1 element with id of title -->
-    <h1 id="title">Survey Corps</h1>
-    <!-- 2. should have a short explanation in a p element with id of description -->
-    <p id="description">This survey serves as feedback for the design of this survey using only pure HTML and CSS</p>
+    <header>
+        <!-- 1. should have a page title in an h1 element with id of title -->
+        <h1 id="title">Survey Design</h1>
+        <!-- 2. should have a short explanation in a p element with id of description -->
+        <p id="description">This survey serves as feedback for the design of this survey using only pure HTML and CSS
+        </p>
+    </header>
     <!-- 3. should have form element with id survey-form-->
     <form action="" id="survey-form">
-        <!-- 4-11 should have labels with proper id and, text and number input fields -->
-        <label for="username" id="name-label">Name:</label>
-        <input required type="text" name="username" id="name" placeholder="Mister D. Dots">
-        <label for="email-address" id="email-label">Email:</label>
-        <input required type="email" name="email-address" id="email" placeholder="dots@hotme.com">
-        <label for="rating" id="number-label">Rate this part (0 - 5):</label>
-        <input type="number" name="rating" id="number" min="0" max="5" placeholder="5">
-        <!-- 12. should have select dropdown element -->
-        <label for="rate-sel">Rate this select dropdown</label>
-        <select name="rate-sel" id="dropdown">
-            <option value="5">5 - Very Nice</option>
-            <option value="4">4 - Great</option>
-            <option value="3">3 - Likely</option>
-            <option value="2">2 - Okay</option>
-            <option value="1">1 - Improve it</option>
-            <option value="0">0 - Really bad</option>
-        </select>
-        <!-- 13. should have radio buttons that are grouped using the name attribute -->
-        <p>Rate this radio buttons:</p>
-        <input type="radio" name="rate-radio" id="radio-btn" value="1" checked>
-        <label for="rate-radio">Looking Good</label>
-        <input type="radio" name="rate-radio" id="radio-btn" value="0">
-        <label for="rate-radio">Too simple</label>
-        <!-- 14. should have series of checkboxes with a corresponding value -->
-        <p>Which parts of this survey needs improvement?</p>
-        <input type="checkbox" name="chk0" id="checkbox" value="5">
-        <label for="chk5">Text Input</label>
-        <input type="checkbox" name="chk0" id="checkbox" value="4">
-        <label for="chk4">Dropdown</label>
-        <input type="checkbox" name="chk0" id="checkbox" value="3">
-        <label for="chk3">Radio Button</label>
-        <input type="checkbox" name="chk0" id="checkbox" value="2">
-        <label for="chk2">Checkbox</label>
-        <input type="checkbox" name="chk0" id="checkbox" value="1">
-        <label for="chk1">Text Area</label>
-        <input type="checkbox" name="chk0" id="checkbox" value="0">
-        <label for="chk0">Colors</label>
+        <section class="text-inputs">
+            <h2>Text Inputs</h2>
+            <!-- 4-11 should have labels with proper id and, text and number input fields -->
+            <label for="username" id="name-label">Name:</label>
+            <input required type="text" name="username" id="name" placeholder="Mister D. Dots">
+            <label for="email-address" id="email-label">Email:</label>
+            <input required type="email" name="email-address" id="email" placeholder="dots@hotme.com">
+            <label for="rating" id="number-label">Text Input Rating:</label>
+            <input type="number" name="rating" id="number" min="0" max="5" placeholder="5">
+        </section>
+        <hr>
+        <section class="selectable">
+            <h2>Selectable</h2>
+            <!-- 12. should have select dropdown element -->
+            <label for="rate-sel">Dropdown Rating</label>
+            <select name="rate-sel" id="dropdown">
+                <option value="5">5 - Very Nice</option>
+                <option value="4">4 - Great</option>
+                <option value="3">3 - Likely</option>
+                <option value="2">2 - Okay</option>
+                <option value="1">1 - Improve it</option>
+                <option value="0">0 - Really bad</option>
+            </select>
+            <!-- 13. should have radio buttons that are grouped using the name attribute -->
+            <div class="radios">
+                <p>Radio Button Rating:</p>
+                <div>
+                    <div class="radio-item">
+                        <input type="radio" name="rate-radio" id="radio1" value="1" checked>
+                        <label for="radio1">Looking Good</label>
+                    </div>
+                    <div class="radio-item">
+                        <input type="radio" name="rate-radio" id="radio2" value="0">
+                        <label for="radio2">Too simple</label>
+                    </div>
+                </div>
 
-        <label for="comments">Additional Comments:</label>
-        <textarea name="comments" id="comments" maxlength="300" cols="30" rows="10"></textarea>
+            </div>
+            <!-- 14. should have series of checkboxes with a corresponding value -->
+            <p>Which parts of this survey needs improvement?</p>
+            <div class="checkbox-grid-container">
+                <div class="checkbox-grid">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="chk5" value="5">
+                        <label for="chk5">Text Input</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="chk4" value="4">
+                        <label for="chk4">Dropdown</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="chk3" value="3">
+                        <label for="chk3">Radio Button</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="chk2" value="2">
+                        <label for="chk2">Checkbox</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="chk1" value="1">
+                        <label for="chk1">Text Area</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="chk0" value="0">
+                        <label for="chk0">Colors</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <label for="comments">Write an Essay</label>
+        <textarea name="comments" id="comments" rows="12"></textarea>
 
         <button type="submit" id="submit">Submit Survey</button>
     </form>
