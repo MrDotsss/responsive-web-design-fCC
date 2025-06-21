@@ -15,17 +15,20 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-body {
-    background-color: var(--tertiary);
+header {
+    display: flex;
+    justify-content: center;
 }
 
-header {
+.header-container {
     text-align: center;
+    width: 80vw;
     padding: 18px;
-    margin-bottom: 24px;
+    margin: 24px 0;
     background-color: var(--red-primary);
     color: white;
     box-shadow: 0px 10px var(--red-secondary);
+    border-radius: 24px;
 }
 
 header h1 {
@@ -160,12 +163,12 @@ button[type="submit"] {
     background-color: var(--red-primary);
     border: none;
     border-radius: 16px;
-    box-shadow: 2px 5px var(--red-secondary);
+    box-shadow: 0px 5px var(--red-secondary);
 }
 
 
 button[type="submit"]:hover {
     background-color: var(--red-secondary);
-    box-shadow: 2px 5px var(--red-primary);
+    box-shadow: 0px 5px var(--red-primary);
     color: var(--tertiary);
 }
